@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class PayrollCalculator {
     public static Employees[] employeeArray;
-
     public static void main(String[] args) {
         csvReader();
-
     }
     public static void csvReader(){
         try {
@@ -42,7 +40,7 @@ public class PayrollCalculator {
             String choice = scan.nextLine();
             for (Employees employees : employeeArray) {
                 if (Integer.parseInt(choice) == (employees.getId())) {
-                    System.out.println("Employee Id: " + employees.getId() + "\nEmployee Name: " + employees.getName() + "\nEmployee Gross Pay: $" + employees.getGrossPay());
+                    System.out.printf("Employee Id: %d\nEmployee Name: %s\nEmployee Gross Pay: $%.2f\n\n",employees.getId(),employees.getName(),employees.getGrossPay());
                     break;
                 }
             }
